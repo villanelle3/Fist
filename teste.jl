@@ -91,3 +91,53 @@ end
 
 println(somar(π, 5))
 lista("water", "agua")
+
+# =========== TYPES ===========
+struct MyType
+    nome
+    numero::Integer
+    decimal::AbstractFloat
+ end
+
+ mt = MyType("string", 1, 1.58) # nao mutavel
+println(mt.nome)
+
+mutable struct MyType2
+    nome
+    numero::Integer
+    decimal::AbstractFloat
+ end
+
+ mt2 = MyType2("string", 1, 1.58)
+ mt2.nome = "Nova string"
+println(mt2.nome)
+
+# =========== PACOTES ===========
+using Random
+r1 = randn(5)
+println(r1)
+# no terminal da julia (onde aparece julia>), digite só ]
+# add Makie
+
+# using Makie
+# y = rand(10)
+# println(y)
+# lines(y, color = :blue)
+
+# using CairoMakie  # backend mais leve e compatível com VSCode
+# y = rand(10)
+# lines(y, color = :blue)
+# display(current_figure())
+
+using GLMakie
+y = rand(10)
+fig = lines(y, color = :blue)
+
+# # so mostrar
+# display(fig)
+# # impede o script de fechar imediatamente
+# readline()
+
+# # salvar
+# save("grafico.png", fig)
+
