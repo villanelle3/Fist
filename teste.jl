@@ -141,3 +141,16 @@ fig = lines(y, color = :blue)
 # # salvar
 # save("grafico.png", fig)
 
+anterior = 0
+atual = 1
+
+println("\nTeste de série:\n")
+for _ in 1:10
+    sequencia = atual + anterior
+    println(atual)
+    global anterior = atual
+    global atual = sequencia
+end
+
+
+
